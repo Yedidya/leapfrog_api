@@ -1,0 +1,22 @@
+development:
+  adapter: mysql2
+  database: leapfrog_api_dev
+  pool: 20
+  encoding: utf8
+  username: root
+# password:
+  host:  localhost
+test:
+  adapter: mysql2
+  database: leapfrog_api_test
+  pool: 20
+  encoding: utf8
+  username: root
+# password
+  host:  localhost
+production:
+  adapter: mysql2
+  pool: 20
+  encoding: utf8
+  username: root
+# password
