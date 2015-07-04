@@ -6,5 +6,6 @@ gem 'mysql2'
 gem 'activerecord'
 
 group :test do
+  gem "rack-test", require: "rack/test"
   gem 'rspec'
 end

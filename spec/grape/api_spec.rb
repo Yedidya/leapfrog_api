@@ -1,4 +1,6 @@
+require 'grape'
 require 'spec_helper'
+require 'rack/test'
 require './api/api/app'
 
 describe API::App do
