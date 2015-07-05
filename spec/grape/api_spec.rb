@@ -1,3 +1,4 @@
+ENV['RACK_ENV'] = 'test'
 require 'grape'
 require 'spec_helper'
 require 'rack/test'
@@ -11,12 +12,20 @@ describe API::App do
   end
 
   describe API::App do
-    describe "POST /api/users" do
-      it "returns an empty array of statuses" do
-        post "/api/users?last_name=Weiner&first_name=Yedidya&gender=Male"
+    describe "GET /users" do
+      it "retrieves users from database" do
+        get "/users"
         expect(last_response.status).to eq(200)
-        expect(JSON.parse(last_response.body)).to eq{"'id':1,'last_name':'Rivers','first_name':'John','gender':'Male'"}
+        expect(JSON.parse(last_response.body)).to eq []
       end
-    end   
+    end 
+
+    describe "POST /users" do
+      it "should create a new user in the database" do
+        post "/users?last_name=Weiner&first_name=Yedidya&gender=Male"
+        expect(last_response.status).to eq(200)
+        expect(JSON.parse(last_response.body)).to eq {"id": 6,"last_name": "Rivers","first_name": "John","gender": "Male"}
+      end
+    end
   end
 end
