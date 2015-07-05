@@ -1,5 +1,7 @@
 Welcome to the Leapfrog API!
 
+ requires ruby 2.1.3
+
  To get started:
   - fork this repo
   - change into the directory
